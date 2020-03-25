@@ -1,0 +1,40 @@
+
+<style>
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+.h-10{
+	height: 10%;
+}
+
+.h-90{
+	height: 90%;
+}
+</style>
+        
+        
+		
+<div class="container">
+	<div class="row h-10  float-right">
+		<div class="col-sm-4 float-right text-center">
+			<input class="btn btn-primary" type="button" value="Logout" onclick="window.location.href = '/logout'" style="margin-top:10px;"/>
+		</div>
+	</div>
+	<div class="row h-90">
+		<div class="col-sm-4 my-auto text-center">
+			<input class="btn btn-primary" type="button" value="Users" onclick="window.location.href = '/show_users'" />
+		</div>
+		
+		<div class="col-sm-4 my-auto text-center">
+			<input class="btn btn-primary" type="button" value="My Shared Places" onclick="window.location.href = '/shared_places?mode=1'"/>
+		</div>
+		<div class="col-sm-4 my-auto text-center">
+			<input class="btn btn-primary" type="button" value="Places Shared With Me" onclick="window.location.href = '/shared_places?mode=2'"/>
+		</div>
+	</div>
+</div>

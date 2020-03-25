@@ -1,0 +1,73 @@
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/bootstrap.js"></script>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<link rel="stylesheet" href="stylesheets/openlayer_5.3.0/ol.css" />
+<script src="javascripts/openlayer_5.3.0/ol.js"></script>
+ 
+<div id='js-map' class='map'></div> 
+
+<script> 
+	var map;
+	var view;
+	var lngLatArr = <%= raw @all_public_shared_location_arr.to_json %>;
+	var center=[0,0];
+	if(lngLatArr.length>0){
+		var center=ol.proj.fromLonLat(lngLatArr[0]);
+	}
+	view = new ol.View({
+		center: center,
+		zoom: 6,
+		maxZoom: 20
+	});
+		
+	map = new ol.Map({
+		layers: [
+		  new ol.layer.Tile({
+			source: new ol.source.OSM()
+		  })
+		],
+		target: 'js-map',
+		controls: ol.control.defaults({
+		  attributionOptions: {
+			collapsible: false
+		  }
+		}),
+		view: view
+	});
+		
+	addLocationPoint(lngLatArr,"coordinatePosition",'red');
+		
+	function addLocationPoint(arr,layerName,pointerColor){
+		if(arr.length==0){
+			return;
+		}
+		lngLatCroods=[]
+		for(i=0;i<arr.length;i++){
+			lngLatCroods.push(ol.proj.fromLonLat(arr[i]));
+		}
+		console.log( lngLatCroods)
+		var iconFeature = new ol.Feature({
+							geometry: new ol.geom.MultiPoint(lngLatCroods)
+						});
+		var iconStyle = new ol.style.Style({
+							image: new ol.style.Icon({
+								anchor: [0.5, 0.5],
+								anchorXUnits: 'fraction',
+								anchorYUnits: 'fraction',
+								src: 'https://www.google.co.in/maps/vt/icon/name=assets/icons/spotlight/spotlight_pin_v3_shadow-1-small.png,assets/icons/spotlight/spotlight_pin_v3-1-small.png,assets/icons/spotlight/spotlight_pin_v3_dot-1-small.png&highlight=ff000000,ea4335,a50e0e?scale=1',
+								crossOrigin: 'anonymous',
+							})
+					  });
+		iconFeature.setStyle(iconStyle);
+		var layer = new ol.layer.Vector({
+			source: new ol.source.Vector({
+				features: [
+					iconFeature
+				]
+			})
+		});
+		layer.set('name', layerName)
+		map.addLayer(layer);
+	}
+</script> 

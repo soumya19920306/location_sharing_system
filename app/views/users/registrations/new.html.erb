@@ -1,0 +1,70 @@
+<style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	  background-color: #17a2b8;
+	  height: 100vh;
+	}
+	#signup .container #signup-row #signup-column #signup-box {
+	  margin-top: 120px;
+	  max-width: 600px;
+	  height: 420px;
+	  border: 1px solid #9C9C9C;
+	  background-color: #EAEAEA;
+	}
+	#signup .container #signup-row #signup-column #signup-box #signup-form {
+	  padding: 20px;
+	}
+	#signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
+	  margin-top: -85px;
+	}
+	.new_user{
+		margin-top: 15px;
+	}
+</style>
+
+<h2>Sign up</h2>
+
+<div id="signup">
+	<div class="container">
+		<div id="signup-row" class="row justify-content-center align-items-center">
+			<div id="signup-column" class="col-md-6">
+				<div id="signup-box" class="col-md-12">
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+						
+						<div class="form-group">
+							<%= f.label :email, class: "text-info" %>
+							<%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email" %> 
+						</div>
+						<div class="form-group">
+							<%= f.label :username, class: "text-info"  %>
+							<%= f.text_field :username, autofocus: true, autocomplete: "off",size: 30, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :password, class: "text-info" %>
+							<% if @minimum_password_length %>
+								<em>(<%= @minimum_password_length %> characters minimum)</em>
+							<% end %>
+							
+							<%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+						</div>
+						
+						<div class="form-group">
+							<%= f.label :password_confirmation, class: "text-info" %>
+							
+							<%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+						</div>
+						
+						<div class="form-group">
+							<%= f.submit "Sign Up", class: "btn btn-info btn-md" %>
+						</div>
+						
+						<div id="login-link" class="text-right">
+							<%= render "users/shared/links" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

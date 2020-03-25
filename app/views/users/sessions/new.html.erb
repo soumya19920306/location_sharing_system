@@ -1,0 +1,66 @@
+<style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	  background-color: #17a2b8;
+	  height: 100vh;
+	}
+	#login .container #login-row #login-column #login-box {
+	  margin-top: 120px;
+	  max-width: 600px;
+	  height: 240px;
+	  border: 1px solid #9C9C9C;
+	  background-color: #EAEAEA;
+	}
+	#login .container #login-row #login-column #login-box #login-form {
+	  padding: 20px;
+	}
+	#login .container #login-row #login-column #login-box #login-form #register-link {
+	  margin-top: -85px;
+	}
+	.new_user{
+		margin-top: 15px;
+	}
+</style>
+
+<h2>Log in</h2>
+
+<div id="login">
+	<div class="container">
+		<div id="login-row" class="row justify-content-center align-items-center">
+			<div id="login-column" class="col-md-6">
+				<div id="login-box" class="col-md-12">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						
+						<div class="form-group">
+							<%if false %>
+								<%= f.email_field :email, :class => "login_input", :placeholder => "User Name" %>   
+							<%end%>
+							<%= f.text_field :login, class: "form-control", placeholder: "Login" %> 
+						</div>
+						
+						<div class="form-group">
+							<%= f.password_field :password, class: "form-control", autocomplete: "current-password", placeholder: "Password" %>
+						</div>
+						
+						<% if devise_mapping.rememberable? %>
+							<div class="form-group">
+							  <%= f.label :remember_me, class: "text-info" %>
+							  <%= f.check_box :remember_me %>
+							</div>
+						<% end %>
+						
+						<div class="form-group">
+							<%= f.submit "Log in", class: "btn btn-info btn-md" %>
+						</div>
+						
+						<div id="register-link" class="text-right">
+							<a href="/users">Sign up</a><br>
+							<!-- <a href="/users/password/new">Forgot your password?</a><br>-->
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
