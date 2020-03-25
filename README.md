@@ -5,15 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: ruby 2.7.0
 
-* System dependencies
+* Rails version: Rails 6.0.2.2
 
-* Configuration
+* Database: PosgreSQL
 
-* Database creation
+* Database creation: rake db:create
 
-* Database initialization
+* Database initialization: rake db:migrate
+
+* For gem install: bundle install
+
+* Run seed files: rake db:seed_fu
 
 * How to run the test suite
 
