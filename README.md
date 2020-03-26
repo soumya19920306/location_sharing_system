@@ -19,10 +19,4 @@ Things you may want to cover:
 
 * Run seed files: rake db:seed_fu
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Heroku live url: https://protected-woodland-74876.herokuapp.com/share_location

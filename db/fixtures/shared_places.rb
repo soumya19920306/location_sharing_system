@@ -1,0 +1,23 @@
+# db/fixtures/shared_places.rb
+SharedPlace.seed(:id,
+  {:user_id=> 1, :shared_to=> 'public', :shared_longitude=> 88.43016744, :shared_latitude=> 22.62604366},
+  {:user_id=> 1, :shared_to=> 'public', :shared_longitude=> 74.2840421, :shared_latitude=> 33.8785011},
+  {:user_id=> 1, :shared_to=> '2', :shared_longitude=> 88.4718932, :shared_latitude=> 22.5934247},
+  {:user_id=> 1, :shared_to=> '3', :shared_longitude=> 88.2640112, :shared_latitude=> 22.5973869},
+  {:user_id=> 1, :shared_to=> '4', :shared_longitude=> 88.2736242, :shared_latitude=> 23.1714685},
+  {:user_id=> 2, :shared_to=> 'public', :shared_longitude=> 87.7637241, :shared_latitude=> 24.1817561},
+  {:user_id=> 2, :shared_to=> 'public', :shared_longitude=> 73.7896573, :shared_latitude=> 29.8776735},
+  {:user_id=> 2, :shared_to=> '1', :shared_longitude=> 87.7593533, :shared_latitude=> 24.1796113},
+  {:user_id=> 2, :shared_to=> '3', :shared_longitude=> 88.43016744, :shared_latitude=> 24.4981417},
+  {:user_id=> 2, :shared_to=> '4', :shared_longitude=> 84.5433058, :shared_latitude=> 25.1105473},
+  {:user_id=> 3, :shared_to=> 'public', :shared_longitude=> 87.9853317, :shared_latitude=> 25.0926619},
+  {:user_id=> 3, :shared_to=> 'public', :shared_longitude=> 71.5055266, :shared_latitude=> 19.3300523},
+  {:user_id=> 3, :shared_to=> '1', :shared_longitude=> 87.9067796, :shared_latitude=> 27.5973674},
+  {:user_id=> 3, :shared_to=> '2', :shared_longitude=> 88.5906785, :shared_latitude=> 25.964437},
+  {:user_id=> 3, :shared_to=> '4', :shared_longitude=> 85.3513172, :shared_latitude=> 26.1204464},
+  {:user_id=> 4, :shared_to=> 'public', :shared_longitude=> 87.9853317, :shared_latitude=> 26.1204464},
+  {:user_id=> 4, :shared_to=> 'public', :shared_longitude=> 90.3583485, :shared_latitude=> 24.265306},
+  {:user_id=> 4, :shared_to=> '1', :shared_longitude=> 84.8866174, :shared_latitude=> 26.1279167},
+  {:user_id=> 4, :shared_to=> '2', :shared_longitude=> 84.2979906, :shared_latitude=> 26.326408},
+  {:user_id=> 4, :shared_to=> '3', :shared_longitude=> 74.2840421, :shared_latitude=> 33.8785011}
+)

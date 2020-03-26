@@ -1,4 +1,3 @@
- 
 class SharedPlace < ApplicationRecord
 	belongs_to :user
 	def self.create_shared_location(lat,lng,shared_to,current_user)
