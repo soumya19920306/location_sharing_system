@@ -12,6 +12,7 @@
  *
  *= require bootstrap/scss/bootstrap
  *= require ol
+ *= require custom
  *= require_tree .
  *= require_self
  */
