@@ -3,6 +3,7 @@ module DeviseHelper
     return '' if resource.errors.empty?
 	
     messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+	#puts messages
     html = <<-HTML
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert">
@@ -14,7 +15,6 @@ module DeviseHelper
       #{messages}
     </div>
     HTML
-
     html.html_safe
   end
 end
