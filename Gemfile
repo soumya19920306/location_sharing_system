@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 #added
-gem 'nokogiri', '~> 1.11.0.rc1'
+gem 'nokogiri', '~> 1.13.5'
 gem 'devise'
 gem 'seed-fu'
 gem 'rack-cors'
